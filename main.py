@@ -7,4 +7,4 @@ import datetime as dt
 zone= st.selectbox("Choose a city", pytz.all_timezones)
 
 ## display date and time for a location
-st.write(display_date_time_weather)
+st.write(yw.display_date_time_weather(zone))
