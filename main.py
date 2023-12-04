@@ -20,7 +20,7 @@ def display_date_time(zone):
 def display_weather(city):
     API = 'e1313973fe262c3c18b4500d98fe65eb'
     unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
-    unit_temp=unit_in_api["unit_chosen"]
+    unit_temp=unit_in_api[unit_chosen]
     url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}&units={unit_temp}"
     weatherzone = requests.get(url)
     response_weatherzone = weatherzone.json()
@@ -43,7 +43,7 @@ def display_weather(city):
 
 location = st.selectbox("Choose a location", pytz.all_timezones)
 city = st.text_input("Choose a city", "")
-unit_chosen = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
+unit_chosen = st.selectbox("Select Temperature Unit: ", ("celsius", "fahrenheit"))
 
 ## display date and time and weather for a location
 st.write(display_date_time(location))
