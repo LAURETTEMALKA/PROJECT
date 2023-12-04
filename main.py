@@ -1,4 +1,4 @@
-import weather_app.py as wa
+import weather_app as wa
 import streamlit as st
 import pytz
 import requests
