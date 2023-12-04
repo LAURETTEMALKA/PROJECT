@@ -43,10 +43,12 @@ location = st.selectbox("Choose a location", pytz.all_timezones)
 city = st.text_input("Choose a city", "")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("celsius", "fahrenheit"))
 
-unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
-unit_temp=unit_in_api[unit_chosen]
-
+def unit_temp(unit):
+    unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
+    unit_temp=unit_in_api[unit_chosen]
+    return unit_temp
 ## display date and time and weather for a location
+unit=unit_temp(unit_chosen)
 st.write(display_date_time(location))
-st.write(display_weather(city))
+st.write(display_weather(city,unit))
 
