@@ -3,7 +3,7 @@ import pytz
 import datetime as dt
 
 ## display date and time for a location
-def display_date_time_weather(city="Jerusalem"):
+def display_date_time_weather(city="Israel"):
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
     print(f"Your current date and time in {zone}: {formatted_user_time}")
@@ -19,7 +19,7 @@ def display_date_time_weather(city="Jerusalem"):
     print(f"The weather in {city}:")  
 
     API = 'e1313973fe262c3c18b4500d98fe65eb'
-    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}"
+    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city="Jerusalem"}"
     weatherzone = requests.get(url)
     response_weatherzone = weatherzone.json()
 
