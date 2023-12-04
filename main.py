@@ -3,26 +3,20 @@ import pytz
 import requests
 import datetime as dt
 
-location = st.selectbox("Choose a city", pytz.all_timezones)
+location = st.selectbox("Choose a location", pytz.all_timezones)
+city = st.text_input("Choose a city", "")
 
 ## display date and time and weather for a location
-st.write(display_date_time_weather(location))
+st.write(display_date_time(location))
+st.write(display_weather(city))
 
-def display_date_time_weather(zone="Israel"):
+def display_date_time(zone="Israel"):
+    
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
-    print(f"Your current date and time in {zone}: {formatted_user_time}")
+    print(f"Your current date and time in {zone} is: {formatted_user_time}")
 
-    #a=[]
-    #for zone in pytz.all_timezones:
-    #    zone_separated = zone.split("/")
-    #    city=zone_separated[len(zone_separated)-1]
-    #    a.append(city)
-
-    zone_separated = zone.split("/")
-    city=zone_separated[len(zone_separated)-1]  
-    print(f"The weather in {city}:")  
-
+def display_weather(city="Jerusalem")
     API = 'e1313973fe262c3c18b4500d98fe65eb'
     url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}"
     weatherzone = requests.get(url)
@@ -33,7 +27,8 @@ def display_date_time_weather(zone="Israel"):
     wind=response_weatherzone['wind']['speed']
     description=response_weatherzone['weather'][0]['description']
     temp=response_weatherzone['main']['temp']
-
+    
+    print(f"The weather in {city} is:")
     print(f'Temperature:', {temp},'°C')
     print(f'Wind:', {wind})
     print(f'Pressure:', {pressure})
