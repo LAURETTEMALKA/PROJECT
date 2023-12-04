@@ -2,7 +2,7 @@ import streamlit as st
 import pytz
 import requests
 import datetime as dt
-from PROJECT import weather 
+import weather 
 
 zone = st.selectbox("Choose a city", pytz.all_timezones)
 
