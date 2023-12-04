@@ -3,8 +3,6 @@ import pytz
 import requests
 import datetime as dt
 
-location = st.selectbox("Choose a location", pytz.all_timezones)
-city = st.text_input("Choose a city", "")
 
 def display_date_time(zone):
     
@@ -31,6 +29,8 @@ def display_weather(city):
     print(f'Humidity:', {humidity})
     print(f'Description:', {description})
 
+location = st.selectbox("Choose a location", pytz.all_timezones)
+city = st.text_input("Choose a city", "")
 
 ## display date and time and weather for a location
 st.write(display_date_time(location))
