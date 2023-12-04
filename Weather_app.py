@@ -3,7 +3,7 @@ import pytz
 import datetime as dt
 
 ## display date and time for a location
-def display_date_time_weather(city="Israel"):
+def display_date_time_weather(zone="Israel"):
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
     print(f"Your current date and time in {zone}: {formatted_user_time}")
