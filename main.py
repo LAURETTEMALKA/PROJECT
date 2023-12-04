@@ -30,7 +30,12 @@ def display_weather(city):
     d=(f'Pressure:', {pressure})
     e=(f'Humidity:', {humidity})
     f=(f'Description:', {description})
-    return a,b,c,d,e,f
+    return a
+    return b
+    return c 
+    return d
+    return e 
+    return f
     
 location = st.selectbox("Choose a location", pytz.all_timezones)
 city = st.text_input("Choose a city", "")
