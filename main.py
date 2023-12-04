@@ -10,13 +10,13 @@ city = st.text_input("Choose a city", "")
 st.write(display_date_time(location))
 st.write(display_weather(city))
 
-def display_date_time(zone="Israel"):
+def display_date_time(zone):
     
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
     print(f"Your current date and time in {zone} is: {formatted_user_time}")
 
-def display_weather(city="Jerusalem")
+def display_weather(city)
     API = 'e1313973fe262c3c18b4500d98fe65eb'
     url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}"
     weatherzone = requests.get(url)
