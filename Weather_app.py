@@ -1,1 +1,29 @@
+import requests
+import pytz
+import datetime as dt
 
+## display date and time for a location
+def display_date_time_weather(city="Jerusalem"):
+    
+    user_time = dt.datetime.now(pytz.timezone(city))
+    formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
+    print(f"Your current date and time: {formatted_user_time}")
+
+    API = 'e1313973fe262c3c18b4500d98fe65eb'
+    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}"
+    weatherzone = rq.get(url)
+    response_weatherzone = weatherzone.json()
+
+    humidity=response_weatherzone['main']['humidity']
+    pressure=response_weatherzone['main']['pressure']
+    wind=response_weatherzone['wind']['speed']
+    description=response_weatherzone['weather'][0]['description']
+    temp=response_weatherzone['main']['temp']
+
+    print(f'Temperature:', {temp},'°C')
+    print(f'Wind:', {wind})
+    print(f'Pressure:', {pressure})
+    print(f'Humidity:', {humidity})
+    print(f'Description:', {description})
+
+  
