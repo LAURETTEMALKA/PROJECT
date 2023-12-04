@@ -24,7 +24,7 @@ def display_date_time_weather(zone="Israel"):
     print(f"The weather in {city}:")  
 
     API = 'e1313973fe262c3c18b4500d98fe65eb'
-    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city="Jerusalem"}"
+    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city=Jerusalem}"
     weatherzone = requests.get(url)
     response_weatherzone = weatherzone.json()
 
