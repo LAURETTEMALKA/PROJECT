@@ -1,4 +1,4 @@
-from weather_app import display_date_time_weather
+import weather_app
 import streamlit as st
 import pytz
 import requests
