@@ -8,7 +8,9 @@ def display_date_time(zone):
     
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
-    print(f"Your current date and time in {zone} is: {formatted_user_time}")
+    text=(f"Your current date and time in {zone} is: {formatted_user_time}")
+    return text
+
 
 def display_weather(city):
     API = 'e1313973fe262c3c18b4500d98fe65eb'
