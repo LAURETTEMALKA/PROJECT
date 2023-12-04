@@ -24,13 +24,14 @@ def display_weather(city):
     description=response_weatherzone['weather'][0]['description']
     temp=response_weatherzone['main']['temp']
     
-    print(f"The weather in {city} is:")
-    print(f'Temperature:', {temp},'°C')
-    print(f'Wind:', {wind})
-    print(f'Pressure:', {pressure})
-    print(f'Humidity:', {humidity})
-    print(f'Description:', {description})
-
+    a=(f"The weather in {city} is:")
+    b=(f'Temperature:', {temp},'°C')
+    c=(f'Wind:', {wind})
+    d=(f'Pressure:', {pressure})
+    e=(f'Humidity:', {humidity})
+    f=(f'Description:', {description})
+    return a,b,c,d,e,f
+    
 location = st.selectbox("Choose a location", pytz.all_timezones)
 city = st.text_input("Choose a city", "")
 
