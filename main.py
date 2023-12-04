@@ -3,6 +3,11 @@ import pytz
 import requests
 import datetime as dt
 
+st.title("Today's Weather")
+st.write("## *Made by Laurette*")
+st.write("##")
+
+st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
 
 def display_date_time(zone="Israel"):
     
