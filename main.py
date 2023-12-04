@@ -44,7 +44,7 @@ city = st.text_input("Choose a city", "")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("celsius", "fahrenheit"))
 
 unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
-unit_temp=unit_in_api["unit_chosen"]
+unit_temp=unit_in_api[unit_chosen]
 
 ## display date and time and weather for a location
 st.write(display_date_time(location))
