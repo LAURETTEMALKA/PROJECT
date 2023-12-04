@@ -16,7 +16,7 @@ def display_date_time(zone):
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
     print(f"Your current date and time in {zone} is: {formatted_user_time}")
 
-def display_weather(city)
+def display_weather(city):
     API = 'e1313973fe262c3c18b4500d98fe65eb'
     url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}"
     weatherzone = requests.get(url)
