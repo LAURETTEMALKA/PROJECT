@@ -39,7 +39,7 @@ def display_weather(city, unit_temp):
     
 def unit_temp(unit):
     unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
-    unit_temp=unit_in_api[unit_chosen]
+    unit_temp=unit_in_api[unit]
     return unit_temp
 
 
