@@ -41,7 +41,6 @@ def display_weather(city):
 
 
 
-print(f'We call it in openweather {unit_chosen}')
 location = st.selectbox("Choose a location", pytz.all_timezones)
 city = st.text_input("Choose a city", "")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ('celsius', 'fahrenheit'))
