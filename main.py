@@ -36,6 +36,6 @@ location = st.selectbox("Choose a location", pytz.all_timezones)
 city = st.text_input("Choose a city", "")
 
 ## display date and time and weather for a location
-st.write(display_date_time(location))
-st.write(display_weather(city))
+st.write(display_date_time())
+st.write(display_weather())
 
