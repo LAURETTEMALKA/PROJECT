@@ -4,7 +4,7 @@ import requests
 import datetime as dt
 
 
-def display_date_time(zone):
+def display_date_time(zone="Israel"):
     
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
@@ -12,7 +12,7 @@ def display_date_time(zone):
     return text
 
 
-def display_weather(city):
+def display_weather(city="Jerusalem"):
     API = 'e1313973fe262c3c18b4500d98fe65eb'
     url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}"
     weatherzone = requests.get(url)
@@ -30,12 +30,7 @@ def display_weather(city):
     d=(f'Pressure:', {pressure})
     e=(f'Humidity:', {humidity})
     f=(f'Description:', {description})
-    return a
-    return b
-    return c 
-    return d
-    return e 
-    return f
+    return a,b,c,d,e,f
     
 location = st.selectbox("Choose a location", pytz.all_timezones)
 city = st.text_input("Choose a city", "")
