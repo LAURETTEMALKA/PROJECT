@@ -6,5 +6,5 @@ import weather
 
 zone = st.selectbox("Choose a city", pytz.all_timezones)
 
-## display date and time for a location
+## display date and time and weather for a location
 st.subheader(weather.display_date_time_weather())
