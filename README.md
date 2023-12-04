@@ -1,2 +1,2 @@
-# PROJECT
+# project
 PROJECT ON WEATH_APP
