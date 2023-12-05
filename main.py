@@ -50,7 +50,7 @@ st.write("##")
 
 st.write("### Write the name of the city you are interested in to display the weather:")
 city = st.text_input("")
-st.write("### Select Temperature unit for the weather")
+st.write("### Select Temperature unit for the weather:")
 unit_chosen = st.selectbox(" ", ("Celsius", "Fahrenheit"))
 unit = unit_temp(unit_chosen)
 
