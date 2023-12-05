@@ -35,7 +35,23 @@ def unit_temp(unit):
     unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
     unittemp=unit_in_api[unit]
     return unittemp
+import argparse
 
+def main():
+    parser = argparse.ArgumentParser(description='Weather CLI')
+    parser.add_argument('--location', type=str, help='Location to get the weather for')
+    parser.add_argument('--unit', type=str, choices=['C', 'F'], help='Temperature unit: Celsius (C) or Fahrenheit (F)')
+    args = parser.parse_args()
+
+    # Your code to handle the weather query goes here
+    if args.location:
+        print(f"Fetching weather for {args.location} in {args.unit}...")
+        # Fetch and display the weather
+
+if __name__ == '__main__':
+    main()
+
+st.write(main())
 st.write("## Date and time in Israel:")
 st.write(display_date_time())
 
