@@ -3,7 +3,6 @@ import pytz
 import requests
 import datetime as dt
 import pandas as pd
-import argparse
 
 st.title("Today's Date, Time and Weather")
 st.write("## *Made by Laurette*")
@@ -41,18 +40,13 @@ st.write(display_date_time())
 st.write("## The weather in Jerusalem:")
 st.write(display_weather())
 
-parser = argparse.ArgumentParser(description='Weather CLI')
-a=parser.add_argument('--location', type=str, help='Location to get the weather for')
-parser.add_argument('--unit', type=str, choices=['C', 'F'], help='Temperature unit: Celsius (C) or Fahrenheit (F)')
-args = parser.parse_args()
-
 st.write("### Choose the zone of your location in this list to display date and time :")
 location = st.selectbox("Choose a location", pytz.all_timezones)
 st.write(f" ## We are in {location} area: ")
 st.write(display_date_time(location))
 
 st.write("### Write the name of the city you are interested in to display the weather:")
-city = st.text_input(a)
+city = st.text_input("Write the city you are interested in for the weather", "")
 st.write("### Choose the unit for the temperature of the weather")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("Celsius", "Fahrenheit"))
 
