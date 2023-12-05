@@ -46,7 +46,7 @@ def display_weather(city, unit):
 location = st.selectbox("Choose a location", pytz.all_timezones)
 city = st.text_input("Choose a city", "")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("celsius", "fahrenheit"))
-unit_in_api = {"Celsius":"metric", "Fahrenheit":"imperial"}
+unit_in_api = {'Celsius':"metric", 'Fahrenheit':"imperial"}
 unittemp = unit_in_api[unit_chosen]
 #unit = unit_temp(unit_chosen)
 
