@@ -47,7 +47,8 @@ def display_weather(city="Jerusalem", unit="metric"):
     #e = st.write(f"### 💧 Humidity: {humidity} %")
     #f=f'Description: {description}'
     #f = st.write(f"### {icon_url} Description: {description}")
-    return weather
+    df = pd.DataFrame(weather)
+    return df
 
 def unit_temp(unit):
     unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
