@@ -3,7 +3,7 @@ import pytz
 import requests
 import datetime as dt
 import pandas as pd
-
+import argparse
 
 st.title("Today's Date, Time and Weather")
 st.write("## *Made by Laurette*")
@@ -27,7 +27,6 @@ def display_weather(city="Jerusalem", unit="metric"):
     weather={'Detail':['Humidity 💧 (%)', 'Pressure ⏲️ (mBar)', 'Wind 💨 (m:/s)', 'Description', 'Temp (°C)'], 
             'Data':[response_weatherzone['main']['humidity'], response_weatherzone['main']['pressure'], response_weatherzone['wind']['speed'], response_weatherzone['weather'][0]['description'].upper(),response_weatherzone['main']['temp']]}
     
-
     df = pd.DataFrame(weather)
     return df
 
@@ -35,30 +34,17 @@ def unit_temp(unit):
     unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
     unittemp=unit_in_api[unit]
     return unittemp
-import argparse
 
-def main():
-    parser = argparse.ArgumentParser(description='Weather CLI')
-    parser.add_argument('--location', type=str, help='Location to get the weather for')
-    parser.add_argument('--unit', type=str, choices=['C', 'F'], help='Temperature unit: Celsius (C) or Fahrenheit (F)')
-    args = parser.parse_args()
-
-    # Your code to handle the weather query goes here
-    if args.location:
-        print(f"Fetching weather for {args.location} in {args.unit}...")
-        # Fetch and display the weather
-
-if __name__ == '__main__':
-    main()
-
-st.display(main())
 st.write("## Date and time in Israel:")
 st.write(display_date_time())
 
 st.write("## The weather in Jerusalem:")
 st.write(display_weather())
 
-
+parser = argparse.ArgumentParser(description='Weather CLI')
+    a=parser.add_argument('--location', type=str, help='Location to get the weather for')
+    parser.add_argument('--unit', type=str, choices=['C', 'F'], help='Temperature unit: Celsius (C) or Fahrenheit (F)')
+    args = parser.parse_args()
 
 st.write("### Choose the zone of your location in this list to display date and time :")
 location = st.selectbox("Choose a location", pytz.all_timezones)
@@ -66,7 +52,7 @@ st.write(f" ## We are in {location} area: ")
 st.write(display_date_time(location))
 
 st.write("### Write the name of the city you are interested in to display the weather:")
-city = st.text_input("Choose a city", "")
+city = st.text_input(a)
 st.write("### Choose the unit for the temperature of the weather")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("Celsius", "Fahrenheit"))
 
