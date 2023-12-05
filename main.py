@@ -32,7 +32,7 @@ def display_weather(city="Jerusalem", unit="metric"):
     temp=response_weatherzone['main']['temp']
     icon_code = response_weatherzone["weather"][0]["icon"]
     icon_url = f"http://openweathermap.org/img/wn/{icon_code}.png"
-    icon = icon_url
+    #icon = icon_url
     
     a=f"The weather in {city} is:"
     b=f'Temperature: {temp},°C'
@@ -43,7 +43,7 @@ def display_weather(city="Jerusalem", unit="metric"):
     #e=f'Humidity: {humidity}'
     e = st.write(f"### 💧 Humidity: {humidity} %")
     #f=f'Description: {description}'
-    f = st.write(f"### {icon} Description: {description}")
+    f = st.write(f"### {icon_url} Description: {description}")
     return a, b, c, d, e, f
 
 def unit_temp(unit):
