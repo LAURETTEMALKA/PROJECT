@@ -46,7 +46,7 @@ st.write(f" ## We are in {location} area: ")
 st.write(display_date_time(location))
 
 st.write("### Write the name of the city you are interested in to display the weather:")
-city = st.text_input()
+city = st.text_input("")
 st.write("### Choose the unit for the temperature of the weather")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("Celsius", "Fahrenheit"))
 
