@@ -31,7 +31,7 @@ def display_weather(city="Jerusalem", unit="metric"):
     wind=response_weatherzone['wind']['speed']
     description=response_weatherzone['weather'][0]['description']
     temp=response_weatherzone['main']['temp']
-    icon_code = response_weatherzone["weather"][0]["icon"]
+    icon_code = response_weatherzon.get["weather"][0].get["icon"]
     icon_url = f"https://openweathermap.org/img/wn/icon={icon_code}.png"
     #icon = icon_url
     
