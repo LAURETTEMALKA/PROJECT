@@ -26,11 +26,11 @@ def display_weather(city="Jerusalem", unit="metric"):
     weatherzone = requests.get(url)
     response_weatherzone = weatherzone.json()
 
-    weather={'humidity':[response_weatherzone['main']['humidity']],
-             'pressure':[response_weatherzone['main']['pressure']],
-             'wind':[response_weatherzone['wind']['speed']],
-             'description':[response_weatherzone['weather'][0]['description']],
-             'temp':[response_weatherzone['main']['temp']]}
+    weather={'Humidity 💧 (%)':[response_weatherzone['main']['humidity']],
+             'Pressure ⏲️ (mBar)':[response_weatherzone['main']['pressure']],
+             'Wind 💨 (m:/s)':[response_weatherzone['wind']['speed']],
+             'Description':[response_weatherzone['weather'][0]['description']],
+             'Temp (°C)':[response_weatherzone['main']['temp']]}
     
     icon_code = response_weatherzone["weather"][0]["icon"]
     icon_url = f"https://openweathermap.org/img/wn/icon={icon_code}.png"
