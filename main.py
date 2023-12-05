@@ -42,18 +42,22 @@ def unit_temp(unit):
     unittemp=unit_in_api[unit]
     return unittemp
 
-st.write("### Choose the zone of your location in this list:")
+st.write("### Choose the zone of your location in this list to display date and time :")
 location = st.selectbox("Choose a location", pytz.all_timezones)
-st.write("### Write the name of the city you are interested in:")
+st.write(display_date_time(location="Israel"))
+
+st.write("### Write the name of the city you are interested in to display the weather:")
 city = st.text_input("Choose a city", "")
 st.write("### Choose the unit for the temperature of the weather")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("Celsius", "Fahrenheit"))
 #unit_in_api = {'Celsius':"metric", 'Fahrenheit':"imperial"}
 #unittemp = unit_in_api[unit_chosen]
 unit = unit_temp(unit_chosen)
+st.write(display_weather(city="Jerusalem",unit="metric"))
+
 
 
 ## display date and time and weather for a location
-st.write(display_date_time(location="Israel"))
-st.write(display_weather(city="Jerusalem",unit="metric"))
+#st.write(display_date_time(location))
+#st.write(display_weather(city, unit))
 
