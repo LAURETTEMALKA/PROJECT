@@ -53,5 +53,5 @@ unit = unit_temp(unit_chosen)
 
 ## display date and time and weather for a location
 st.write(display_date_time(location))
-st.write(display_weather(city,unittemp))
+st.write(display_weather(city,unit))
 
