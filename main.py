@@ -54,6 +54,6 @@ unit = unit_temp(unit_chosen)
 
 
 ## display date and time and weather for a location
-st.write(display_date_time(location="Israel))
+st.write(display_date_time(location="Israel"))
 st.write(display_weather(city="Jerusalem",unit="metric"))
 
