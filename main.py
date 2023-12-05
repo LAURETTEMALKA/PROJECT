@@ -3,13 +3,13 @@ import pytz
 import requests
 import datetime as dt
 
-st.title("Today's Weather")
+st.title("Today's Date, Time and Weather")
 st.write("## *Made by Laurette*")
 st.write("##")
 
-st.write("### You have to full all this empty cases")
+#st.write("### You have to full all this empty cases")
 
-def display_date_time(zone):
+def display_date_time(zone='Israel'):
     
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
@@ -17,7 +17,7 @@ def display_date_time(zone):
     return text
 
 
-def display_weather(city, unit):
+def display_weather(city="Jerusalem", unit="metric"):
     API = 'e1313973fe262c3c18b4500d98fe65eb'
     url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}&units={unit}"
     weatherzone = requests.get(url)
