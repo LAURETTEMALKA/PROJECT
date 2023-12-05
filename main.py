@@ -3,7 +3,6 @@ import pytz
 import requests
 import datetime as dt
 import pandas as pd
-import io
 
 
 st.title("Today's Date, Time and Weather")
@@ -33,7 +32,9 @@ def display_weather(city="Jerusalem", unit="metric"):
     description=response_weatherzone['weather'][0]['description']
     temp=response_weatherzone['main']['temp']
     icon_code = response_weatherzone["weather"][0]["icon"]
-    icon_url = io.imread(f"https://openweathermap.org/img/wn/{icon_code}@2x.png")
+    icon_url = f"https://openweathermap.org/img/wn/{icon_code}@2x.png"
+    weathericon = requests.get(icon_url)
+    weathericon_json = weathericon.json()
     #icon = icon_url
     
     a=f"The weather in {city} is:"
@@ -45,7 +46,7 @@ def display_weather(city="Jerusalem", unit="metric"):
     #e=f'Humidity: {humidity}'
     e = st.write(f"### 💧 Humidity: {humidity} %")
     #f=f'Description: {description}'
-    f = st.write(f"### {icon_url} Description: {description}")
+    f = st.write(f"### {weathericon_json} Description: {description}")
     return a, b, c, d, e, f
 
 def unit_temp(unit):
