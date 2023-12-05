@@ -34,7 +34,8 @@ def display_weather(city="Jerusalem", unit="metric"):
     b=f'Temperature: {temp},°C'
     c=f'Wind: {wind}'
     d=f'Pressure: {pressure}'
-    e=f'Humidity: {humidity}'
+    #e=f'Humidity: {humidity}'
+    e = st.write(f"### 💧 Humidity: {humidity}%")
     f=f'Description: {description}'
     
     return a, b, c, d, e, f
