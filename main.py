@@ -7,7 +7,7 @@ st.title("Today's Weather")
 st.write("## *Made by Laurette*")
 st.write("##")
 
-st.write("### Enter the city name, choose a Temperature unit and a graph type from the bottom:")
+st.write("### You have to full all this empty cases")
 
 def display_date_time(zone):
     
@@ -42,9 +42,11 @@ def unit_temp(unit):
     unittemp=unit_in_api[unit]
     return unittemp
 
-
+st.write("### Choose the zone of your location in this list:")
 location = st.selectbox("Choose a location", pytz.all_timezones)
+st.write("### Write the name of the city you are interested in:")
 city = st.text_input("Choose a city", "")
+st.write("### Choose the unit for the temperature of the weather")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("Celsius", "Fahrenheit"))
 #unit_in_api = {'Celsius':"metric", 'Fahrenheit':"imperial"}
 #unittemp = unit_in_api[unit_chosen]
