@@ -30,12 +30,12 @@ def display_weather(city="Jerusalem", unit="metric"):
     description=response_weatherzone['weather'][0]['description']
     temp=response_weatherzone['main']['temp']
     
-    a=(f"The weather in {city} is:")
-    b=(f'Temperature:', {temp},'°C')
-    c=(f'Wind:', {wind})
-    d=(f'Pressure:', {pressure})
-    e=(f'Humidity:', {humidity})
-    f=(f'Description:', {description})
+    a=f"The weather in {city} is:"
+    b=f'Temperature:', {temp},'°C'
+    c=f'Wind:', {wind}
+    d=f'Pressure:', {pressure}
+    e=f'Humidity:', {humidity}
+    f=f'Description:', {description}
     return a,b,c,d,e,f
     
 def unit_temp(unit):
