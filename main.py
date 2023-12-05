@@ -3,7 +3,7 @@ import pytz
 import requests
 import datetime as dt
 import pandas as pd
-from skimage import io
+import io
 
 
 st.title("Today's Date, Time and Weather")
