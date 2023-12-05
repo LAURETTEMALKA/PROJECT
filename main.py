@@ -29,7 +29,7 @@ def display_weather(city="Jerusalem", unit="metric"):
     weather={'Humidity 💧 (%)':[response_weatherzone['main']['humidity']],
              'Pressure ⏲️ (mBar)':[response_weatherzone['main']['pressure']],
              'Wind 💨 (m:/s)':[response_weatherzone['wind']['speed']],
-             'Description':[response_weatherzone['weather'][0]['description']],
+             'Description':[response_weatherzone['weather'][0]['description']].uppercase(),
              'Temp (°C)':[response_weatherzone['main']['temp']]}
     
     icon_code = response_weatherzone["weather"][0]["icon"]
