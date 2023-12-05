@@ -17,9 +17,9 @@ def display_date_time(zone):
     return text
 
 
-def display_weather(city, unit_temp):
+def display_weather(city, unit):
     API = 'e1313973fe262c3c18b4500d98fe65eb'
-    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}&units={unit_temp}"
+    url=f"https://api.openweathermap.org/data/2.5/weather?appid={API}&q={city}&units={unit}"
     weatherzone = requests.get(url)
     response_weatherzone = weatherzone.json()
 
