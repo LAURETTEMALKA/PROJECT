@@ -14,7 +14,7 @@ def display_date_time(zone='Israel'):
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
     #text=(f"Your current date and time in {zone} is: \n {formatted_user_time}")
-    text=(f"## *{formatted_user_time}*")
+    text=(f"### *{formatted_user_time}*")
     return text
 
 
@@ -43,10 +43,10 @@ def unit_temp(unit):
     unittemp=unit_in_api[unit]
     return unittemp
 
-st.write("### Date and time in Israel:")
+st.write("## Date and time in Israel:")
 st.write(display_date_time())
 
-st.write("The weather in Jerusalem:")
+st.write("## The weather in Jerusalem:")
 st.write(display_weather())
 
 
