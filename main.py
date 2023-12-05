@@ -54,7 +54,8 @@ st.write(display_weather())
 
 st.write("### Choose the zone of your location in this list to display date and time :")
 location = st.selectbox("Choose a location", pytz.all_timezones)
-st.write(f" ## We are in {location} area: ",display_date_time(location))
+st.write(f" ## We are in {location} area: ")
+st.write(display_date_time(location))
 
 st.write("### Write the name of the city you are interested in to display the weather:")
 city = st.text_input("Choose a city", "")
