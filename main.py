@@ -42,9 +42,9 @@ st.write("## The weather in Jerusalem:")
 st.write(display_weather())
 
 parser = argparse.ArgumentParser(description='Weather CLI')
-    a=parser.add_argument('--location', type=str, help='Location to get the weather for')
-    parser.add_argument('--unit', type=str, choices=['C', 'F'], help='Temperature unit: Celsius (C) or Fahrenheit (F)')
-    args = parser.parse_args()
+a=parser.add_argument('--location', type=str, help='Location to get the weather for')
+parser.add_argument('--unit', type=str, choices=['C', 'F'], help='Temperature unit: Celsius (C) or Fahrenheit (F)')
+args = parser.parse_args()
 
 st.write("### Choose the zone of your location in this list to display date and time :")
 location = st.selectbox("Choose a location", pytz.all_timezones)
