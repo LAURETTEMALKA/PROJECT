@@ -24,7 +24,7 @@ def display_weather(city="Jerusalem", unit="metric"):
     weatherzone = requests.get(url)
     response_weatherzone = weatherzone.json()
 
-    weather={'Detail':['Humidity 💧 (%), 'Pressure ⏲️ (mBar)', 'Wind 💨 (m:/s)', 'Description', 'Temp (°C)'], 
+    weather={'Detail':['Humidity 💧 (%)', 'Pressure ⏲️ (mBar)', 'Wind 💨 (m:/s)', 'Description', 'Temp (°C)'], 
             'Data':[response_weatherzone['main']['humidity']], [response_weatherzone['main']['pressure']], [response_weatherzone['wind']['speed']], [response_weatherzone['weather'][0]['description'].upper()],[response_weatherzone['main']['temp']]}
     
 
