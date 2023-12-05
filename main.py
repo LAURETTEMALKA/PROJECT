@@ -51,7 +51,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-st.write(main())
+st.display(main())
 st.write("## Date and time in Israel:")
 st.write(display_date_time())
 
