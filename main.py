@@ -2,6 +2,7 @@ import streamlit as st
 import pytz
 import requests
 import datetime as dt
+import pandas as pd
 
 st.title("Today's Date, Time and Weather")
 st.write("## *Made by Laurette*")
@@ -29,17 +30,20 @@ def display_weather(city="Jerusalem", unit="metric"):
     wind=response_weatherzone['wind']['speed']
     description=response_weatherzone['weather'][0]['description']
     temp=response_weatherzone['main']['temp']
+    icon_code = weather_json["weather"][0]["icon"]
+    icon_url = f"http://openweathermap.org/img/wn/{icon_code}.png"
+    icon = icon_url
     
     a=f"The weather in {city} is:"
     b=f'Temperature: {temp},°C'
     #c=f'Wind: {wind}'
-    c= st.write(f"### 💨 Wind Speed: {wind}m/s")
+    c= st.write(f"### 💨 Wind Speed: {wind} m/s")
     #d=f'Pressure: {pressure}'
-    d = st.write(f"### ⏲️ Pressure: {pressure}mBar")
+    d = st.write(f"### ⏲️ Pressure: {pressure} mBar")
     #e=f'Humidity: {humidity}'
-    e = st.write(f"### 💧 Humidity: {humidity}%")
-    f=f'Description: {description}'
-    
+    e = st.write(f"### 💧 Humidity: {humidity} %")
+    #f=f'Description: {description}'
+    f = st.write(f"### {icon} Description: {description}")
     return a, b, c, d, e, f
 
 def unit_temp(unit):
@@ -68,3 +72,12 @@ unit_chosen = st.selectbox("Select Temperature Unit: ", ("Celsius", "Fahrenheit"
 #unittemp = unit_in_api[unit_chosen]
 unit = unit_temp(unit_chosen)
 st.write(display_weather(city,unit))
+
+
+
+# table
+on = st.toggle(f"Show weather details of ***{city}***")
+
+if on:
+    df = pd.DataFrame(display_weather(selected_value))
+    df
