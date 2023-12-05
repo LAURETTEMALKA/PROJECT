@@ -9,8 +9,6 @@ st.title("Today's Date, Time and Weather")
 st.write("## *Made by Laurette*")
 st.write("##")
 
-#st.write("### You have to full all this empty cases")
-
 def display_date_time(zone='Israel'):
     
     user_time = dt.datetime.now(pytz.timezone(zone))
@@ -32,21 +30,7 @@ def display_weather(city="Jerusalem", unit="metric"):
              'Description':[response_weatherzone['weather'][0]['description'].upper()],
              'Temp (°C)':[response_weatherzone['main']['temp']]}
     
-    icon_code = response_weatherzone["weather"][0]["icon"]
-    icon_url = f"https://openweathermap.org/img/wn/icon={icon_code}.png"
-    icon = icon_url
-    #icon = icon_url
-    
-    #a=f"The weather in {city} is:"
-    #b=f'Temperature: {temp},°C'
-    #c=f'Wind: {wind}'
-    #c= st.write(f"### 💨 Wind Speed: {wind} m/s")
-    #d=f'Pressure: {pressure}'
-    #d = st.write(f"### ⏲️ Pressure: {pressure} mBar")
-    #e=f'Humidity: {humidity}'
-    #e = st.write(f"### 💧 Humidity: {humidity} %")
-    #f=f'Description: {description}'
-    #f = st.write(f"### {icon_url} Description: {description}")
+
     df = pd.DataFrame(weather)
     return df
 
@@ -72,14 +56,8 @@ st.write("### Write the name of the city you are interested in to display the we
 city = st.text_input("Choose a city", "")
 st.write("### Choose the unit for the temperature of the weather")
 unit_chosen = st.selectbox("Select Temperature Unit: ", ("Celsius", "Fahrenheit"))
-#unit_in_api = {'Celsius':"metric", 'Fahrenheit':"imperial"}
-#unittemp = unit_in_api[unit_chosen]
+
 unit = unit_temp(unit_chosen)
-st.write(display_weather(city,unit))
-
-
-
-# table
 on = st.toggle(f"Show weather details of ***{city}***")
 
 if on:
