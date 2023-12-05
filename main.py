@@ -13,7 +13,7 @@ def display_date_time(zone='Israel'):
     
     user_time = dt.datetime.now(pytz.timezone(zone))
     formatted_user_time = user_time.strftime("%A, %B %d, %Y, %I:%M %p")
-    text=(f"Your current date and time in {zone} is:\n {formatted_user_time}")
+    text=(f"Your current date and time in {zone} is:,\n, {formatted_user_time}")
     return text
 
 
@@ -50,8 +50,6 @@ st.write(display_weather())
 
 
 
-
-
 st.write("### Choose the zone of your location in this list to display date and time :")
 location = st.selectbox("Choose a location", pytz.all_timezones)
 st.write(display_date_time(location))
@@ -64,10 +62,3 @@ unit_chosen = st.selectbox("Select Temperature Unit: ", ("Celsius", "Fahrenheit"
 #unittemp = unit_in_api[unit_chosen]
 unit = unit_temp(unit_chosen)
 st.write(display_weather(city,unit))
-
-
-
-## display date and time and weather for a location
-#st.write(display_date_time(location))
-#st.write(display_weather(city, unit))
-
