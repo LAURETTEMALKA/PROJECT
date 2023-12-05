@@ -26,27 +26,28 @@ def display_weather(city="Jerusalem", unit="metric"):
     weatherzone = requests.get(url)
     response_weatherzone = weatherzone.json()
 
-    humidity=response_weatherzone['main']['humidity']
-    pressure=response_weatherzone['main']['pressure']
-    wind=response_weatherzone['wind']['speed']
-    description=response_weatherzone['weather'][0]['description']
-    temp=response_weatherzone['main']['temp']
+    weather={
+        'humidity':[response_weatherzone['main']['humidity']],
+            'pressure:[response_weatherzone['main']['pressure']],
+                'wind':[response_weatherzone['wind']['speed']],
+                    'description':[response_weatherzone['weather'][0]['description']],
+                        'temp':[response_weatherzone['main']['temp']]}
     icon_code = response_weatherzone["weather"][0]["icon"]
     icon_url = f"https://openweathermap.org/img/wn/icon={icon_code}.png"
     icon = icon_url
     #icon = icon_url
     
-    a=f"The weather in {city} is:"
-    b=f'Temperature: {temp},°C'
+    #a=f"The weather in {city} is:"
+    #b=f'Temperature: {temp},°C'
     #c=f'Wind: {wind}'
-    c= st.write(f"### 💨 Wind Speed: {wind} m/s")
+    #c= st.write(f"### 💨 Wind Speed: {wind} m/s")
     #d=f'Pressure: {pressure}'
-    d = st.write(f"### ⏲️ Pressure: {pressure} mBar")
+    #d = st.write(f"### ⏲️ Pressure: {pressure} mBar")
     #e=f'Humidity: {humidity}'
-    e = st.write(f"### 💧 Humidity: {humidity} %")
+    #e = st.write(f"### 💧 Humidity: {humidity} %")
     #f=f'Description: {description}'
-    f = st.write(f"### {icon_url} Description: {description}")
-    return a, b, c, d, e, f
+    #f = st.write(f"### {icon_url} Description: {description}")
+    return weather
 
 def unit_temp(unit):
     unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
