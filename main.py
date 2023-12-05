@@ -36,7 +36,8 @@ def display_weather(city="Jerusalem", unit="metric"):
     d=f'Pressure: {pressure}'
     e=f'Humidity: {humidity}'
     f=f'Description: {description}'
-    return a,b,c,d,e,f
+    text=a,\n b,\n c,\n d,\n e,\n f
+    return text
     
 def unit_temp(unit):
     unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
