@@ -37,12 +37,7 @@ def display_weather(city="Jerusalem", unit="metric"):
     e=f'Humidity: {humidity}'
     f=f'Description: {description}'
     
-    return a,
-            b,
-            c,
-            d,
-            e,
-            f
+    return a, b, c, d, e, f
 
 def unit_temp(unit):
     unit_in_api={"Celsius":"metric", "Fahrenheit":"imperial"}
@@ -59,7 +54,7 @@ st.write(display_weather())
 
 st.write("### Choose the zone of your location in this list to display date and time :")
 location = st.selectbox("Choose a location", pytz.all_timezones)
-st.write(display_date_time(location))
+st.write(" ## We are in {location} area: "display_date_time(location))
 
 st.write("### Write the name of the city you are interested in to display the weather:")
 city = st.text_input("Choose a city", "")
