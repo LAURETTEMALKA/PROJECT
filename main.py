@@ -58,5 +58,5 @@ unit = unit_temp(unit_chosen)
 on = st.toggle(f"Show weather details of ***{city}***")
 
 if on:
-    df = pd.DataFrame(display_weather(city,unit))
-    df
+    st.write(display_weather(city,unit))
+
